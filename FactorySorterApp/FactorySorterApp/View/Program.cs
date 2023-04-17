@@ -1,4 +1,6 @@
-﻿using FactorySorterApp.Models;
+using FactorySorterApp.Models;
+using System.Diagnostics;
+
 namespace FactorySorterApp.View;
 
 public class Program
@@ -45,10 +47,17 @@ public class Program
         Console.WriteLine($"You entered {num}");
 
 
+        //The timer for sorting algorithm
+        Stopwatch stopWatch = new Stopwatch();
+        stopWatch.Start();
+        //Put sort call here:
+
+
+        //Timer stops
+        stopWatch.Stop();
+
+        //Prints time elapsed
+        Console.WriteLine(stopWatch.ElapsedMilliseconds + " ms");
     }
-
-
-
-
 
 }
