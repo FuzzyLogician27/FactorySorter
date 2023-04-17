@@ -25,11 +25,22 @@ internal class ArrayGeneratorTest
     public void GivenInteger_WhenArrayGenerator_ArrayMembersInRange(int length)
     {
         ArrayGenerator aG = new ArrayGenerator(length);
-        foreach(int i in aG.SortableArray)
+        foreach (int i in aG.SortableArray)
         {
             Assert.That(i, Is.AtMost(1000));
             Assert.That(i, Is.AtLeast(-1000));
         }
     }
+
+
+    [TestCase(3, 2,"{542,-192,-668}")]
+    [TestCase(5, 50, "{695,-23,435,-540,561}")]
+    [TestCase(7, 69, "{547,-874,997,-429,-283,716,644}")]
+    public void GivenLengthAndSeed_ArrayGeneratorToString_ReturnsCorrectString(int length, int seed, string expected)
+    {
+        ArrayGenerator arrG = new ArrayGenerator(length, seed);
+        Assert.That(arrG.ToString, Is.EqualTo(expected));
+    }
+
 
 }
