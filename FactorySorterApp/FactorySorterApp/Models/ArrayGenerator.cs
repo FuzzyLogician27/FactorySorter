@@ -1,4 +1,4 @@
-﻿namespace FactorySorterApp;
+﻿namespace FactorySorterApp.Models;
 
 public class ArrayGenerator
 {
