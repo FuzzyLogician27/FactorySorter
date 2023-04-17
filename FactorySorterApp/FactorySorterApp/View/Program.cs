@@ -1,4 +1,4 @@
-﻿using FactorySorterApp.Models;
+using FactorySorterApp.Models;
 using System.Diagnostics;
 
 namespace FactorySorterApp.View;
@@ -59,9 +59,5 @@ public class Program
         //Prints time elapsed
         Console.WriteLine(stopWatch.ElapsedMilliseconds + " ms");
     }
-
-
-
-
 
 }
