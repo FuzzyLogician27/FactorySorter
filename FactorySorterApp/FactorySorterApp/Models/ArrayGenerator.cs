@@ -7,6 +7,10 @@ public class ArrayGenerator
 
     public ArrayGenerator(int arrayLength)
     {
+        if(arrayLength < 1)
+        {
+            throw new ArgumentException("Array length cannot be less than 1!");
+        }
         SortableArray = new int[arrayLength];
         GenerateRandomArray();
     }
