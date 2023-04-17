@@ -1,3 +1,5 @@
+using FactorySorterApp.Models;
+
 namespace FactorySorterTests;
 
 public class BubbleSortTests
@@ -8,8 +10,12 @@ public class BubbleSortTests
     }
 
     [Test]
-    public void Test1()
+    public void GivenArrayGenerator_WhenBubbleSort_ReturnCorrectSortedArray()
     {
-        Assert.Pass();
+        ArrayGenerator AG = new ArrayGenerator(5);
+        int[] expectedResult = AG.SortableArray;
+        Array.Sort(expectedResult);
+        int[] actualResult = AG.SortableArray;
+        Assert.That(expectedResult, Is.EqualTo(actualResult));
     }
 }
