@@ -7,6 +7,10 @@ public class ArrayGenerator
 
     public ArrayGenerator(int arrayLength)
     {
+        if(arrayLength < 1)
+        {
+            throw new ArgumentException("Array length cannot be less than 1!");
+        }
         SortableArray = new int[arrayLength];
         GenerateRandomArray();
     }
@@ -18,6 +22,22 @@ public class ArrayGenerator
         {
             SortableArray[i] = rand.Next(-1000, 1001);
         }
+    }
+
+    public override string ToString()
+    {
+        string message = "{";
+
+        for(int i = 0; i < SortableArray.Length; i++)
+        {
+            message += SortableArray[i];
+            if(i != (SortableArray.Length - 1))
+            {
+                message += ",";
+            }
+        }
+        message += "}";
+        return message;
     }
 
 }

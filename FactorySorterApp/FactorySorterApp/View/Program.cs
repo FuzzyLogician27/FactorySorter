@@ -1,4 +1,5 @@
-﻿namespace FactorySorterApp.View;
+﻿using FactorySorterApp.Models;
+namespace FactorySorterApp.View;
 
 public class Program
 {
@@ -6,6 +7,7 @@ public class Program
     {
         //Greeting
         Console.WriteLine("Hi user!");
+
 
         //Prompting user how many numbers to be sorted
         Console.WriteLine("How many numbers?");
@@ -41,6 +43,7 @@ public class Program
 
 
         Console.WriteLine($"You entered {num}");
+
 
     }
 
