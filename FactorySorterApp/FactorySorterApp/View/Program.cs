@@ -1,4 +1,4 @@
-﻿using FactorySorterApp.Models;
+using FactorySorterApp.Models;
 namespace FactorySorterApp.View;
 
 public class Program
@@ -46,9 +46,5 @@ public class Program
 
 
     }
-
-
-
-
 
 }
