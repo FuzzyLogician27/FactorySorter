@@ -20,4 +20,20 @@ public class ArrayGenerator
         }
     }
 
+    public override string ToString()
+    {
+        string message = "{";
+
+        for(int i = 0; i < SortableArray.Length; i++)
+        {
+            message += SortableArray[i];
+            if(i != (SortableArray.Length - 1))
+            {
+                message += ",";
+            }
+        }
+        message += "}";
+        return message;
+    }
+
 }
