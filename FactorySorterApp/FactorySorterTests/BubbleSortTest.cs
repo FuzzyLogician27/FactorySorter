@@ -4,18 +4,19 @@ namespace FactorySorterTests;
 
 public class BubbleSortTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
 
-    [Test]
-    public void GivenArrayGenerator_WhenBubbleSort_ReturnCorrectSortedArray()
+    [TestCase(5,5)]
+    [TestCase(5, 9)]
+    [TestCase(50, -1)]
+    public void GivenArrayGenerator12_WhenBubbleSort_ReturnCorrectSortedArray(int length, int seed)
     {
-        ArrayGenerator AG = new ArrayGenerator(5);
-        int[] expectedResult = AG.SortableArray;
+        var AG1 = new ArrayGenerator(length, seed);
+        var AG2 = new ArrayGenerator(length, seed);
+        var bubbleSort = new Bubble(AG2);
+        int[] expectedResult = AG1.SortableArray;
         Array.Sort(expectedResult);
-        int[] actualResult = AG.SortableArray;
-        Assert.That(expectedResult, Is.EqualTo(actualResult));
+        bubbleSort.Sort();
+        int[] actualResult = AG2.SortableArray;
+        Assert.That(actualResult, Is.EqualTo(expectedResult));
     }
 }
