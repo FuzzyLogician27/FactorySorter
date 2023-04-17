@@ -3,7 +3,7 @@
 public interface ISorter
 {
 
-    public ArrayGenerator Sort();
+    public void Sort();
 
 
 }
