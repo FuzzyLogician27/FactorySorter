@@ -1,4 +1,6 @@
-﻿namespace FactorySorterApp.Models;
+﻿using FactorySorterApp.Controller;
+
+namespace FactorySorterApp.Models;
 
 public class Merge : ISorter
 {

@@ -1,4 +1,4 @@
-﻿namespace FactorySorterApp.Models;
+﻿namespace FactorySorterApp.Controller;
 
 public class ArrayGenerator
 {
@@ -19,7 +19,7 @@ public class ArrayGenerator
     private void GenerateRandomArray(int seed)
     {
         Random rand;
-        if(seed == 1)
+        if (seed == 1)
         {
             rand = new Random();
         }
@@ -37,10 +37,10 @@ public class ArrayGenerator
     {
         string message = "{";
 
-        for(int i = 0; i < SortableArray.Length; i++)
+        for (int i = 0; i < SortableArray.Length; i++)
         {
             message += SortableArray[i];
-            if(i != (SortableArray.Length - 1))
+            if (i != SortableArray.Length - 1)
             {
                 message += ",";
             }

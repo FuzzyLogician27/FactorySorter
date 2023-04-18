@@ -1,5 +1,5 @@
 ﻿using FactorySorterApp.Models;
-using NUnit.Framework;
+using FactorySorterApp.Controller;
 
 namespace FactorySorterTests
 {

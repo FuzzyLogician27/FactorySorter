@@ -1,7 +1,4 @@
-
-﻿namespace FactorySorterApp.Models;
-﻿using System.Globalization;
-
+using FactorySorterApp.Controller;
 
 namespace FactorySorterApp.Models;
 

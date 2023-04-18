@@ -1,4 +1,5 @@
 ﻿using FactorySorterApp.Models;
+using FactorySorterApp.Controller;
 
 namespace FactorySorterTests
 {
@@ -15,11 +16,6 @@ namespace FactorySorterTests
             quickSort.Sort();
             int[] actualResult = AG1.SortableArray;
             Assert.That(actualResult, Is.Ordered);
-<<<<<<< HEAD
-            Assert.Pass();
-=======
-           
->>>>>>> dev
         }
     }
 }
