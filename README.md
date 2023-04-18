@@ -2,6 +2,8 @@
 
 This project contains a program to sort a random array using the user's choice of sorting algorithms.
 
+## File Structure
+
 <details>
 
 <summary>:file_folder: Factory Sorter App</summary>
@@ -40,8 +42,15 @@ This project contains a program to sort a random array using the user's choice o
 <details>
 <summary>:file_folder: Factory Sorter Tests</summary>
 
-:open_file_folder: [Factory Sorter Tests](/FactorySorterTests)
+:open_file_folder: [Factory Sorter Tests](/FactorySorterApp/FactorySorterTests/)
 
+- [ArrayGeneratorTest.cs](/FactorySorterApp/FactorySorterTests/ArrayGeneratorTest.cs)
+- [BubbleSortTest.cs](/FactorySorterApp/FactorySorterTests/BubbleSortTest.cs)
+- [FactorySorterTests.csproj](/FactorySorterApp/FactorySorterTests/FactorySorterTests.csproj)
+- [MergeSortTest.cs](/FactorySorterApp/FactorySorterTests/MergeSortTest.cs)
+- [QuickSortTest.cs](/FactorySorterApp/FactorySorterTests/QuickSortTest.cs)
+- [StandardTest.cs](/FactorySorterApp/FactorySorterTests/StandardTest.cs)
+- [Usings.cs](/FactorySorterApp/FactorySorterTests/Usings.cs)
 </details>
 
 
