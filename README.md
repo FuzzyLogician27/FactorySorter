@@ -1,6 +1,11 @@
 # FactorySorter
 
-This project contains a program to sort a random array using the user's choice of sorting algorithms.
+This project contains a program to sort a random array using the user's choice of sorting algorithms. This project was created by [Ahmed Idris](https://github.com/coffeeandcodee), [Andrew Ma](https://github.com/andrew2984), [Danyal Saleh](https://github.com/danymcdan0), [Jacob Banyard](https://github.com/JSB-22), and [Patrick Ardagh-Walter](https://github.com/FuzzyLogician27).
+
+
+## How To Use
+
+Build and run the solution file, and then input the type of sort algorithm and the size of the array according to the on-screen instructions.
 
 ## File Structure
 
@@ -14,6 +19,8 @@ This project contains a program to sort a random array using the user's choice o
 
 ## :open_file_folder: [Controller](/FactorySorterApp/FactorySorterApp/Controller)
 
+- [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Controller/ArrayGenerator.cs)
+- [Controller.cs](/FactorySorterApp/FactorySorterApp/Controller/Controller.cs)
 - [SortFactory.cs](/FactorySorterApp/FactorySorterApp/Controller/SortFactory.cs)
 </details>
 <details>
@@ -21,7 +28,6 @@ This project contains a program to sort a random array using the user's choice o
 
 ## :open_file_folder: [Models](/FactorySorterApp/FactorySorterApp/Models)
 
-- [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Models/ArrayGenerator.cs)
 - [Bubble.cs](/FactorySorterApp/FactorySorterApp/Models/Bubble.cs)
 - [ISorter.cs](/FactorySorterApp/FactorySorterApp/Models/ISorter.cs)
 - [Merge.cs](/FactorySorterApp/FactorySorterApp/Models/Merge.cs)
@@ -49,6 +55,7 @@ This project contains a program to sort a random array using the user's choice o
 - [FactorySorterTests.csproj](/FactorySorterApp/FactorySorterTests/FactorySorterTests.csproj)
 - [MergeSortTest.cs](/FactorySorterApp/FactorySorterTests/MergeSortTest.cs)
 - [QuickSortTest.cs](/FactorySorterApp/FactorySorterTests/QuickSortTest.cs)
+- [SortFactoryTest.cs](/FactorySorterApp/FactorySorterTests/SortFactoryTest.cs)
 - [StandardTest.cs](/FactorySorterApp/FactorySorterTests/StandardTest.cs)
 - [Usings.cs](/FactorySorterApp/FactorySorterTests/Usings.cs)
 </details>
