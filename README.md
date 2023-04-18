@@ -12,7 +12,7 @@ This project contains a program to sort a random array using the user's choice o
 
 ## :open_file_folder: [Controller](/FactorySorterApp/FactorySorterApp/Controller)
 
-- [SortFactory.cs](/FactorySorterApp/FactorySorterApp/Controller/Controller.cs)
+- [SortFactory.cs](/FactorySorterApp/FactorySorterApp/Controller/SortFactory.cs)
 </details>
 <details>
 <summary> :file_folder: Models </summary>
@@ -20,6 +20,20 @@ This project contains a program to sort a random array using the user's choice o
 ## :open_file_folder: [Models](/FactorySorterApp/FactorySorterApp/Models)
 
 - [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Models/ArrayGenerator.cs)
+- [Bubble.cs](/FactorySorterApp/FactorySorterApp/Models/Bubble.cs)
+- [ISorter.cs](/FactorySorterApp/FactorySorterApp/Models/ISorter.cs)
+- [Merge.cs](/FactorySorterApp/FactorySorterApp/Models/Merge.cs)
+- [Quick.cs](/FactorySorterApp/FactorySorterApp/Models/Quick.cs)
+- [Standard.cs](/FactorySorterApp/FactorySorterApp/Models/Standard.cs)
+</details>
+
+<details>
+<summary> :file_folder: View </summary>
+
+## :open_file_folder: [View](/FactorySorterApp/FactorySorterApp/View)
+
+- [Program.cs](/FactorySorterApp/FactorySorterApp/View/Program.cs)
+
 </details>
 </details>
 
