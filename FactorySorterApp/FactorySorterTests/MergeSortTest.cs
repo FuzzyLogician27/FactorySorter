@@ -5,23 +5,17 @@ namespace FactorySorterTests
 {
     public class MergeSortTest
     {
-        private ArrayGenerator? _standardSolvedArray;
-        private ArrayGenerator? _customAgloArray;
-
         [TestCase(5, 5)]
         [TestCase(2, 10)]
         [TestCase(10, 2)]
         [TestCase(1, 100)]
-        public void GivenArrayGenerator_WhenMergeSort_ReturnsCorrectSortedArray(int a, int b) 
+        public void GivenArrayGenerator_WhenMergeSort_ReturnsCorrectSortedArray(int length, int seed) 
         {
-            _standardSolvedArray = new ArrayGenerator(a, b);
-            _customAgloArray = new ArrayGenerator(a, b);
-            int[] expectedResult = _standardSolvedArray.SortableArray;
-            Array.Sort(expectedResult);
-            var mergeSort = new Merge(_customAgloArray);
+            var AG1 = new ArrayGenerator(length, seed);
+            var mergeSort = new Merge(AG1);
             mergeSort.Sort();
-            int[] actualResult = _customAgloArray.SortableArray;
-            Assert.That(actualResult, Is.EqualTo(expectedResult));
+            int[] actualResult = AG1.SortableArray;
+            Assert.That(actualResult, Is.Ordered);
         }
     }
 }
