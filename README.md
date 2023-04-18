@@ -10,16 +10,16 @@ This project contains a program to sort a random array using the user's choice o
 <details>
 <summary> :file_folder: Controller </summary>
 
-## :open_file_folder: [Controller](/FactorySorterApp/Controller)
+## :open_file_folder: [Controller](/FactorySorterApp/FactorySorterApp/Controller)
 
-- [SortFactory.cs](/FactorySorterApp/Controller/Controller.cs)
+- [SortFactory.cs](/FactorySorterApp/FactorySorterApp/Controller/Controller.cs)
 </details>
 <details>
 <summary> :file_folder: Models </summary>
 
-## :open_file_folder: [Models](/FactorySorterApp/Models)
+## :open_file_folder: [Models](/FactorySorterApp/FactorySorterApp/Models)
 
-- [ArrayGenerator.cs](/FactorySorterApp/Models/ArrayGenerator.cs)
+- [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Models/ArrayGenerator.cs)
 </details>
 </details>
 
