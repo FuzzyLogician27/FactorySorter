@@ -1,4 +1,6 @@
 ﻿using FactorySorterApp.Models;
+using FactorySorterApp.Controller;
+
 namespace FactorySorterTests;
 
 internal class ArrayGeneratorTest

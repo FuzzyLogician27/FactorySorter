@@ -1,63 +1,82 @@
-using FactorySorterApp.Models;
-using System.Diagnostics;
+using System;
 
 namespace FactorySorterApp.View;
 
 public class Program
 {
+    private static List<string> _validSorts = new List<string> { "standard", "bubble", "merge", "quick" };
     static void Main()
     {
-        //Greeting
-        Console.WriteLine("Hi user!");
+        Console.WriteLine("================================================");
+        Console.WriteLine("Welcome to the PAJID Sorting Factory!");
+        IntroText();
+        View();
 
-
-        //Prompting user how many numbers to be sorted
-        Console.WriteLine("How many numbers?");
-        string userInput = "";
-        userInput = Console.ReadLine();
-
-        //Checking if input valid. Input must be integer
-        int num;
-        bool inputValid = int.TryParse(userInput, out num);
-
-        //Repeat until desired input, or cancel program
-        while (!inputValid)
+        bool repeat = true;
+        while (repeat)
         {
-            Console.WriteLine("Expected integer. Try again? (y/n)");
-            userInput = Console.ReadLine();
-            if (userInput.ToLower().Equals("y"))
+            Console.WriteLine("Would you like to try the Factory again? (y/n)");
+            string? userInput = Console.ReadLine().ToLower();
+            if (userInput.Equals("y"))
             {
-                Console.WriteLine("Please provide an integer: ");
-                userInput = Console.ReadLine();
-                inputValid = int.TryParse(userInput, out num);
-
-            } else if (userInput.ToLower().Equals("n"))
+                Console.WriteLine("Welcome BACK to the JAPID Sorting Factory!");
+                IntroText();
+                View();
+            }
+            else if (userInput.ToLower().Equals("n"))
             {
-                Console.WriteLine("GoodBye!!");
-                inputValid = true;
+                Console.WriteLine("========================================================");
+                Console.WriteLine("Thank you for visiting the PAJID Sorting Factory! GG WP");
+                Console.WriteLine("========================================================");
+                repeat = false;
             }
             else
             {
                 Console.WriteLine("Invalid response.");
-
             }
         }
-
-
-        Console.WriteLine($"You entered {num}");
-
-
-        //The timer for sorting algorithm
-        Stopwatch stopWatch = new Stopwatch();
-        stopWatch.Start();
-        //Put sort call here:
-
-
-        //Timer stops
-        stopWatch.Stop();
-
-        //Prints time elapsed
-        Console.WriteLine(stopWatch.ElapsedMilliseconds + " ms");
     }
 
+    private static void View() 
+    {
+        string? sortingMethod = Console.ReadLine();
+        bool validSort = false;
+        while (!validSort)
+        {
+            if (_validSorts.Contains(sortingMethod))
+            {
+                validSort = true;
+            }
+            else
+            {
+                Console.WriteLine("Not a valid option, please try again:");
+                sortingMethod = Console.ReadLine();
+            }
+        }
+        Console.WriteLine("Please enter an array length:");
+        string? userInput = Console.ReadLine();
+
+        bool inputValid = int.TryParse(userInput, out int num);
+        inputValid = Controller.Controller.CheckNegative(num);
+        while (!inputValid)
+        {
+            Console.WriteLine("Expected positive integer, please try again:");
+            userInput = Console.ReadLine();
+            inputValid = int.TryParse(userInput, out num);
+            inputValid = Controller.Controller.CheckNegative(num);
+        }
+
+        Console.WriteLine($"You entered {num}");
+        Controller.Controller.Handler(sortingMethod, num);
+    }
+
+    private static void IntroText() 
+    {
+        Console.WriteLine("================================================");
+        Console.WriteLine("Please choose a sorting method listed below:");
+        Console.WriteLine("- DotNetSort : 'standard'");
+        Console.WriteLine("- BubbleSort : 'bubble'");
+        Console.WriteLine("- MergeSort : 'merge'");
+        Console.WriteLine("- QuickSort : 'quick'");
+    }
 }
