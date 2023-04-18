@@ -1,6 +1,4 @@
-using FactorySorterApp.Controller;
-using FactorySorterApp.Models;
-using System.Diagnostics;
+using System;
 
 namespace FactorySorterApp.View;
 
@@ -18,7 +16,7 @@ public class Program
         while (repeat)
         {
             Console.WriteLine("Would you like to try the Factory again? (y/n)");
-            string userInput = Console.ReadLine().ToLower();
+            string? userInput = Console.ReadLine().ToLower();
             if (userInput.Equals("y"))
             {
                 Console.WriteLine("Welcome BACK to the JAPID Sorting Factory!");
@@ -41,7 +39,7 @@ public class Program
 
     private static void View() 
     {
-        string sortingMethod = Console.ReadLine();
+        string? sortingMethod = Console.ReadLine();
         bool validSort = false;
         while (!validSort)
         {
@@ -56,27 +54,20 @@ public class Program
             }
         }
         Console.WriteLine("Please enter an array length:");
-        string userInput = Console.ReadLine();
+        string? userInput = Console.ReadLine();
 
         bool inputValid = int.TryParse(userInput, out int num);
+        inputValid = Controller.Controller.CheckNegative(num);
         while (!inputValid)
         {
-            Console.WriteLine("Expected integer, please try again:");
+            Console.WriteLine("Expected positive integer, please try again:");
             userInput = Console.ReadLine();
             inputValid = int.TryParse(userInput, out num);
+            inputValid = Controller.Controller.CheckNegative(num);
         }
 
         Console.WriteLine($"You entered {num}");
-        ArrayGenerator arr = new ArrayGenerator(num);
-        Console.WriteLine($"Unsorted array: {arr.ToString()}");
-
-        Stopwatch stopWatch = new Stopwatch(); 
-        stopWatch.Start();
-        SortFactory.ChosenSort(sortingMethod, arr);
-        stopWatch.Stop();
-
-        Console.WriteLine($"Your sorted array is: {arr.ToString()}");
-        Console.WriteLine($"Time taken: {stopWatch.ElapsedTicks/100}ns");
+        Controller.Controller.Handler(sortingMethod, num);
     }
 
     private static void IntroText() 
