@@ -19,6 +19,8 @@ Build and run the solution file, and then input the type of sort algorithm and t
 
 ## :open_file_folder: [Controller](/FactorySorterApp/FactorySorterApp/Controller)
 
+- [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Controller/ArrayGenerator.cs)
+- [Controller.cs](/FactorySorterApp/FactorySorterApp/Controller/Controller.cs)
 - [SortFactory.cs](/FactorySorterApp/FactorySorterApp/Controller/SortFactory.cs)
 </details>
 <details>
@@ -26,7 +28,6 @@ Build and run the solution file, and then input the type of sort algorithm and t
 
 ## :open_file_folder: [Models](/FactorySorterApp/FactorySorterApp/Models)
 
-- [ArrayGenerator.cs](/FactorySorterApp/FactorySorterApp/Models/ArrayGenerator.cs)
 - [Bubble.cs](/FactorySorterApp/FactorySorterApp/Models/Bubble.cs)
 - [ISorter.cs](/FactorySorterApp/FactorySorterApp/Models/ISorter.cs)
 - [Merge.cs](/FactorySorterApp/FactorySorterApp/Models/Merge.cs)
@@ -54,6 +55,7 @@ Build and run the solution file, and then input the type of sort algorithm and t
 - [FactorySorterTests.csproj](/FactorySorterApp/FactorySorterTests/FactorySorterTests.csproj)
 - [MergeSortTest.cs](/FactorySorterApp/FactorySorterTests/MergeSortTest.cs)
 - [QuickSortTest.cs](/FactorySorterApp/FactorySorterTests/QuickSortTest.cs)
+- [SortFactoryTest.cs](/FactorySorterApp/FactorySorterTests/SortFactoryTest.cs)
 - [StandardTest.cs](/FactorySorterApp/FactorySorterTests/StandardTest.cs)
 - [Usings.cs](/FactorySorterApp/FactorySorterTests/Usings.cs)
 </details>
