@@ -20,8 +20,10 @@ public class SortFactory
                 sortAlgorithm = new Standard(array);
                 sortAlgorithm.Sort();
                 break;
-            default:
-                throw new ArgumentException();
+            case "quick":
+                sortAlgorithm = new Quick(array);
+                sortAlgorithm.Sort();
+                break;
         }
         return sortAlgorithm;
     }

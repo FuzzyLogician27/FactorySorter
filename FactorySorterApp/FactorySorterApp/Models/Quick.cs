@@ -1,4 +1,9 @@
+
 ﻿namespace FactorySorterApp.Models;
+﻿using System.Globalization;
+
+
+namespace FactorySorterApp.Models;
 
 public class Quick : ISorter
 {
@@ -7,8 +12,9 @@ public class Quick : ISorter
     public Quick(ArrayGenerator array)
     {
         _arrayGenerator = array;
-    }
 
+    }
+    
     //The QuickSort method
     public void Sort()
     {
