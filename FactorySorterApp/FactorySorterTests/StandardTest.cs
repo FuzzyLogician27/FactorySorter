@@ -1,4 +1,5 @@
 ﻿using FactorySorterApp.Models;
+using FactorySorterApp.Controller;
 
 namespace FactorySorterTests;
 

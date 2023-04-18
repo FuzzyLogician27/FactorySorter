@@ -1,4 +1,5 @@
 ﻿namespace FactorySorterApp.Controller;
+
 using FactorySorterApp.Models;
 
 public class SortFactory
