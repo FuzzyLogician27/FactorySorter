@@ -24,8 +24,6 @@ public class SortFactory
                 sortAlgorithm = new Quick(array);
                 sortAlgorithm.Sort();
                 break;
-            default:
-                throw new ArgumentException();
         }
         return sortAlgorithm;
     }
