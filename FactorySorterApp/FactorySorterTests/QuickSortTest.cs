@@ -10,11 +10,11 @@ namespace FactorySorterTests
         [TestCase(1, 100)]
         public void GivenArrayGenerator_WhenQuickSort_ReturnCorrectSortedArray(int length, int seed)
         {
-/*            var AG1 = new ArrayGenerator(length, seed);
+            var AG1 = new ArrayGenerator(length, seed);
             var quickSort = new Quick(AG1);
             quickSort.Sort();
             int[] actualResult = AG1.SortableArray;
-            Assert.That(actualResult, Is.Ordered);*/
+            Assert.That(actualResult, Is.Ordered);
             Assert.Pass();
         }
     }
