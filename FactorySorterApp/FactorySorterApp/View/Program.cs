@@ -1,3 +1,4 @@
+using FactorySorterApp.Controller;
 using FactorySorterApp.Models;
 using System.Diagnostics;
 
@@ -33,8 +34,8 @@ public class Program
 
             } else if (userInput.ToLower().Equals("n"))
             {
-                Console.WriteLine("GoodBye!!");
-                inputValid = true;
+                Console.WriteLine("Goodbye!");
+                return;
             }
             else
             {
@@ -43,9 +44,47 @@ public class Program
             }
         }
 
-
         Console.WriteLine($"You entered {num}");
+        ArrayGenerator arr = new ArrayGenerator(num);
+        Console.WriteLine($"Unsorted array: {arr.ToString()}");
+        bool sortValid = false;
+        while (!sortValid)
+        {
+            Console.WriteLine("Input sort method:");
+            try
+            {
 
+                SortFactory.ChosenSort(Console.ReadLine(),arr);
+                sortValid = true;
+                
+            }
+            catch (ArgumentException)
+            {
+                bool exceptionBool = false;
+                while (!exceptionBool)
+                {
+                    Console.WriteLine("Invalid input. Try again? (y/n)");
+                    string input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "y":
+                            sortValid = false;
+                            exceptionBool = true;
+                            break;
+                        case "n":
+                            Console.WriteLine("Goodbye!");
+                            return;
+                        default:
+                            sortValid = false;
+                            exceptionBool = false;
+                            break;
+                    }
+                }
+                
+            }
+        }
+
+        Console.WriteLine($"Your sorted array is: {arr.ToString()}");
 
         //The timer for sorting algorithm
         Stopwatch stopWatch = new Stopwatch();
