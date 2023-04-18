@@ -4,21 +4,17 @@ namespace FactorySorterTests;
 
 public class StandardTest
 {
-    [Test]
-    public void GivenArrayLength3_StandardSort_ReturnsSortedArray()
+
+    [TestCase(5, 5)]
+    [TestCase(2, 10)]
+    [TestCase(10, 2)]
+    [TestCase(1, 100)]
+    public void GivenArrayGenerator_WhenStandardSort_ReturnsCorrectSortedArray(int length, int seed)
     {
-        ArrayGenerator array = new(3);
-        Standard standard = new(array);
-        standard.Sort();
-        Assert.That(standard._array.SortableArray, Is.Ordered);
-    }
-    
-    [Test]
-    public void GivenArrayLength10_StandardSort_ReturnsSortedArray()
-    {
-        ArrayGenerator array = new(10);
-        Standard standard = new(array);
-        standard.Sort();
-        Assert.That(standard._array.SortableArray, Is.Ordered);
+        var AG1 = new ArrayGenerator(length, seed);
+        var standardSort = new Standard(AG1);
+        standardSort.Sort();
+        int[] actualResult = AG1.SortableArray;
+        Assert.That(actualResult, Is.Ordered);
     }
 }
