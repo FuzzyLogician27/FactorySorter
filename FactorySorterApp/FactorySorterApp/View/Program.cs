@@ -18,7 +18,7 @@ public class Program
         while (repeat)
         {
             Console.WriteLine("Would you like to try the Factory again? (y/n)");
-            string userInput = Console.ReadLine().ToLower();
+            string? userInput = Console.ReadLine().ToLower();
             if (userInput.Equals("y"))
             {
                 Console.WriteLine("Welcome BACK to the JAPID Sorting Factory!");
@@ -41,7 +41,7 @@ public class Program
 
     private static void View() 
     {
-        string sortingMethod = Console.ReadLine();
+        string? sortingMethod = Console.ReadLine();
         bool validSort = false;
         while (!validSort)
         {
@@ -56,7 +56,7 @@ public class Program
             }
         }
         Console.WriteLine("Please enter an array length:");
-        string userInput = Console.ReadLine();
+        string? userInput = Console.ReadLine();
 
         bool inputValid = int.TryParse(userInput, out int num);
         while (!inputValid)
