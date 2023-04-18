@@ -6,97 +6,86 @@ namespace FactorySorterApp.View;
 
 public class Program
 {
+    private static List<string> _validSorts = new List<string> { "standard", "bubble", "merge", "quick" };
     static void Main()
     {
-        //Greeting
-        Console.WriteLine("Hi user!");
+        Console.WriteLine("================================================");
+        Console.WriteLine("Welcome to the PAJID Sorting Factory!");
+        IntroText();
+        View();
 
-
-        //Prompting user how many numbers to be sorted
-        Console.WriteLine("How many numbers?");
-        string userInput = "";
-        userInput = Console.ReadLine();
-
-        //Checking if input valid. Input must be integer
-        int num;
-        bool inputValid = int.TryParse(userInput, out num);
-
-        //Repeat until desired input, or cancel program
-        while (!inputValid)
+        bool repeat = true;
+        while (repeat)
         {
-            Console.WriteLine("Expected integer. Try again? (y/n)");
-            userInput = Console.ReadLine();
-            if (userInput.ToLower().Equals("y"))
+            Console.WriteLine("Would you like to try the Factory again? (y/n)");
+            string userInput = Console.ReadLine().ToLower();
+            if (userInput.Equals("y"))
             {
-                Console.WriteLine("Please provide an integer: ");
-                userInput = Console.ReadLine();
-                inputValid = int.TryParse(userInput, out num);
-
-            } else if (userInput.ToLower().Equals("n"))
+                Console.WriteLine("Welcome BACK to the JAPID Sorting Factory!");
+                IntroText();
+                View();
+            }
+            else if (userInput.ToLower().Equals("n"))
             {
-                Console.WriteLine("Goodbye!");
-                return;
+                Console.WriteLine("========================================================");
+                Console.WriteLine("Thank you for visiting the PAJID Sorting Factory! GG WP");
+                Console.WriteLine("========================================================");
+                repeat = false;
             }
             else
             {
                 Console.WriteLine("Invalid response.");
-
             }
+        }
+    }
+
+    private static void View() 
+    {
+        string sortingMethod = Console.ReadLine();
+        bool validSort = false;
+        while (!validSort)
+        {
+            if (_validSorts.Contains(sortingMethod))
+            {
+                validSort = true;
+            }
+            else
+            {
+                Console.WriteLine("Not a valid option, please try again:");
+                sortingMethod = Console.ReadLine();
+            }
+        }
+        Console.WriteLine("Please enter an array length:");
+        string userInput = Console.ReadLine();
+
+        bool inputValid = int.TryParse(userInput, out int num);
+        while (!inputValid)
+        {
+            Console.WriteLine("Expected integer, please try again:");
+            userInput = Console.ReadLine();
+            inputValid = int.TryParse(userInput, out num);
         }
 
         Console.WriteLine($"You entered {num}");
         ArrayGenerator arr = new ArrayGenerator(num);
         Console.WriteLine($"Unsorted array: {arr.ToString()}");
-        bool sortValid = false;
-        while (!sortValid)
-        {
-            Console.WriteLine("Input sort method:");
-            try
-            {
 
-                SortFactory.ChosenSort(Console.ReadLine(),arr);
-                sortValid = true;
-                
-            }
-            catch (ArgumentException)
-            {
-                bool exceptionBool = false;
-                while (!exceptionBool)
-                {
-                    Console.WriteLine("Invalid input. Try again? (y/n)");
-                    string input = Console.ReadLine();
-                    switch (input)
-                    {
-                        case "y":
-                            sortValid = false;
-                            exceptionBool = true;
-                            break;
-                        case "n":
-                            Console.WriteLine("Goodbye!");
-                            return;
-                        default:
-                            sortValid = false;
-                            exceptionBool = false;
-                            break;
-                    }
-                }
-                
-            }
-        }
-
-        Console.WriteLine($"Your sorted array is: {arr.ToString()}");
-
-        //The timer for sorting algorithm
-        Stopwatch stopWatch = new Stopwatch();
+        Stopwatch stopWatch = new Stopwatch(); 
         stopWatch.Start();
-        //Put sort call here:
-
-
-        //Timer stops
+        SortFactory.ChosenSort(sortingMethod, arr);
         stopWatch.Stop();
 
-        //Prints time elapsed
-        Console.WriteLine(stopWatch.ElapsedMilliseconds + " ms");
+        Console.WriteLine($"Your sorted array is: {arr.ToString()}");
+        Console.WriteLine($"Time taken: {stopWatch.ElapsedTicks/100}ns");
     }
 
+    private static void IntroText() 
+    {
+        Console.WriteLine("================================================");
+        Console.WriteLine("Please choose a sorting method listed below:");
+        Console.WriteLine("- DotNetSort : 'standard'");
+        Console.WriteLine("- BubbleSort : 'bubble'");
+        Console.WriteLine("- MergeSort : 'merge'");
+        Console.WriteLine("- QuickSort : 'quick'");
+    }
 }
