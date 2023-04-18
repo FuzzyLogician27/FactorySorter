@@ -21,7 +21,6 @@ public class Quick : ISorter
 
     }
 
-
     //The Quick Sort method
     public void QuickSort(int[] arr, int start, int end)
     {
