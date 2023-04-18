@@ -28,6 +28,14 @@ public class SortFactoryTest
         ISorter sorter = SortFactory.ChosenSort(input, _arrayGenerator);
         Assert.That(sorter, Is.TypeOf<Merge>());
     }
+    [TestCase("Quick")]
+    [TestCase("quick")]
+    [TestCase("QuIcK")]
+    public void GivenSortTypeQuick_WhenSortFactory_ReturnsCorrectType(string input)
+    {
+        ISorter sorter = SortFactory.ChosenSort(input, _arrayGenerator);
+        Assert.That(sorter, Is.TypeOf<Quick>());
+    }
     [TestCase("Standard")]
     [TestCase("standard")]
     [TestCase("StanDarD")]
