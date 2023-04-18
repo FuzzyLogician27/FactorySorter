@@ -1,6 +1,11 @@
 # FactorySorter
 
-This project contains a program to sort a random array using the user's choice of sorting algorithms.
+This project contains a program to sort a random array using the user's choice of sorting algorithms. This project was created by [Ahmed Idris](https://github.com/coffeeandcodee), [Andrew Ma](https://github.com/andrew2984), [Danyal Saleh](https://github.com/danymcdan0), [Jacob Banyard](https://github.com/JSB-22), and [Patrick Ardagh-Walter](https://github.com/FuzzyLogician27).
+
+
+## How To Use
+
+Build and run the solution file, and then input the type of sort algorithm and the size of the array according to the on-screen instructions.
 
 ## File Structure
 
