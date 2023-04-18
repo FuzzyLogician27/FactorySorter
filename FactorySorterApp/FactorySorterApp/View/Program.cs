@@ -1,3 +1,4 @@
+using FactorySorterApp.Controller;
 using FactorySorterApp.Models;
 using System.Diagnostics;
 
@@ -45,6 +46,21 @@ public class Program
 
 
         Console.WriteLine($"You entered {num}");
+        ArrayGenerator arr = new ArrayGenerator(num);
+        Console.WriteLine($"Unsorted array: {arr.ToString()}");
+        Console.WriteLine("Input sort method:");
+        bool sortValid = false;
+        while (!sortValid)
+        {
+            try
+            {
+                string inputString = Console.ReadLine();
+            }
+            catch (ArgumentException)
+            {
+
+            }
+        }
 
 
         //The timer for sorting algorithm
