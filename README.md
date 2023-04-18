@@ -6,25 +6,27 @@ This project contains a program to sort a random array using the user's choice o
 
 <summary>:file_folder: Factory Sorter App</summary>
 
-## :open_file_folder: [Factory Sorter App](FactorySorter/FactorySorterApp)
+## :open_file_folder: [Factory Sorter App](/FactorySorterApp/)
 <details>
 <summary> :file_folder: Controller </summary>
-## :open_file_folder: [Controller](FactorySorter/FactorySorterApp/Controller)
 
-- [SortFactory.cs](FactorySorter/FactorySorterApp/Controller/Controller.cs)
+## :open_file_folder: [Controller](/FactorySorterApp/Controller)
+
+- [SortFactory.cs](/FactorySorterApp/Controller/Controller.cs)
 </details>
 <details>
 <summary> :file_folder: Models </summary>
-## :open_file_folder: [Models](FactorySorter/FactorySorterApp/Models)
 
-- [ArrayGenerator.cs](FactorySorter/FactorySorterApp/Models/ArrayGenerator.cs)
+## :open_file_folder: [Models](/FactorySorterApp/Models)
+
+- [ArrayGenerator.cs](/FactorySorterApp/Models/ArrayGenerator.cs)
 </details>
 </details>
 
 <details>
 <summary>:file_folder: Factory Sorter Tests</summary>
 
-:open_file_folder: [Factory Sorter Tests](FactorySorter/FactorySorterTests)
+:open_file_folder: [Factory Sorter Tests](/FactorySorterTests)
 
 </details>
 
